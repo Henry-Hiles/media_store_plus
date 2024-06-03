@@ -20,12 +20,11 @@ class MediaStore {
   static String appFolder = "";
   int _sdkInt = 0;
 
-  MediaStore() {
-    _getSDKInt();
-  }
+  MediaStore._() {}
 
-  void _getSDKInt() async {
+  Future<MediaStore> create() async {
     _sdkInt = await MediaStorePlatform.instance.getPlatformSDKInt();
+    return MediaStore._();
   }
 
   /// Get running platform sdk int
