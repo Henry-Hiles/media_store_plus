@@ -26,14 +26,6 @@ class MediaStore {
     return MediaStore._(await MediaStorePlatform.instance.getPlatformSDKInt());
   }
 
-  /// Get running platform sdk int
-  Future<int> getPlatformSDKInt() {
-    if (_sdkInt != 0) {
-      return Future.value(_sdkInt);
-    }
-    return MediaStorePlatform.instance.getPlatformSDKInt();
-  }
-
   /// It will create new file or update existing file.
   /// __It will request for user permission if app hasn't permission to save or edit file in that location.__
   /// To use this method, first save your file in a temporary location like app data folder then provide this path.
