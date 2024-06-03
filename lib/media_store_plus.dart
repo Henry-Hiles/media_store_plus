@@ -18,9 +18,9 @@ export 'package:media_store_plus/src/save_info.dart';
 class MediaStore {
   /// Set app directory like Music/[MediaStore.appFolder], Download/[MediaStore.appFolder], DCIM/[MediaStore.appFolder]
   static String appFolder = "";
-  final int _sdkInt = 0;
+  final int _sdkInt;
 
-  MediaStore._(int _sdkInt);
+  MediaStore._(this._sdkInt);
 
   static Future<MediaStore> create() async {
     return MediaStore._(await MediaStorePlatform.instance.getPlatformSDKInt());
