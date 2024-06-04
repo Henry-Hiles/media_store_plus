@@ -47,13 +47,15 @@ class SaveInfo {
   /// 'true' if it is duplicated file
   bool get isDuplicated => saveStatus == SaveStatus.duplicated;
 
-  const SaveInfo({required this.name, required this.uri, required this.saveStatus});
+  const SaveInfo(
+      {required this.name, required this.uri, required this.saveStatus});
 
   factory SaveInfo.fromJson(Map<String, dynamic> json) {
     return SaveInfo(
-        name: json['name'],
-        uri: Uri.parse(json['uri']),
-        saveStatus: _getSaveStatus(int.parse(json['save_status'])));
+        name: json['name'] ?? json['a'],
+        uri: Uri.parse(json['uri'] ?? json['b']),
+        saveStatus:
+            _getSaveStatus(int.parse(json['save_status'] ?? json['c'])));
   }
 
   @override
