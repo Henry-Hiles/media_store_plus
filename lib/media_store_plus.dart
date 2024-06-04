@@ -22,9 +22,8 @@ class MediaStore {
 
   MediaStore._(this._sdkInt);
 
-  static Future<MediaStore> create() async {
-    return MediaStore._(await MediaStorePlatform.instance.getPlatformSDKInt());
-  }
+  static Future<MediaStore> create() async =>
+      MediaStore._(await MediaStorePlatform.instance.getPlatformSDKInt());
 
   /// It will create new file or update existing file.
   /// __It will request for user permission if app hasn't permission to save or edit file in that location.__
