@@ -52,10 +52,10 @@ class SaveInfo {
 
   factory SaveInfo.fromJson(Map<String, dynamic> json) {
     return SaveInfo(
-        name: json['name'] ?? json['a'],
-        uri: Uri.parse(json['uri'] ?? json['b']),
-        saveStatus:
-            _getSaveStatus(int.parse(json['save_status'] ?? json['c'])));
+      name: json['name'],
+      uri: Uri.parse(json['uri']),
+      saveStatus: _getSaveStatus(int.parse(json['save_status'])),
+    );
   }
 
   @override
